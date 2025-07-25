@@ -10,23 +10,37 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Estilos CSS para integración en iframe
+# Estilos CSS para integración en iframe - SIN PADDING
 st.markdown("""
     <style>
-        /* Ajustes responsive */
+        /* Eliminar TODO el padding del contenedor principal */
+        .block-container {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        /* Ajustes responsive para gráficos y tablas */
         .stPlotlyChart, .stDataFrame {
             width: 100% !important;
         }
+        
         /* Colores adaptables */
         @media (prefers-color-scheme: dark) {
             .stApp {
-                background-color: #0E1117;
+                background-color: #000000;
                 color: #FAFAFA;
             }
         }
+        
         /* Ocultar footer y menú de Streamlit */
         footer {visibility: hidden;}
         .stDeployButton {display: none;}
+        
+        /* Eliminar padding adicional del body */
+        .stApp {
+            margin: 0;
+            padding: 0;
+        }
     </style>
 """, unsafe_allow_html=True)
 
