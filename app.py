@@ -10,13 +10,37 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Estilos CSS para integración en iframe - SIN PADDING
+# Estilos CSS para integración en iframe - SIN PADDING Y SIN BORDES
 st.markdown("""
     <style>
-        /* Eliminar TODO el padding del contenedor principal */
+        /* Eliminar TODO el padding y margenes del contenedor principal */
         .block-container {
             padding: 0 !important;
             margin: 0 !important;
+            border: none !important;
+            outline: none !important;
+        }
+        
+        /* Eliminar bordes del contenedor de la app */
+        .stApp {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            outline: none !important;
+        }
+        
+        /* Eliminar bordes de todo el documento */
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            outline: none !important;
+        }
+        
+        /* Eliminar bordes del contenedor principal de Streamlit */
+        div[data-testid="stApp"] {
+            border: none !important;
+            outline: none !important;
         }
         
         /* Ajustes responsive para gráficos y tablas */
@@ -36,12 +60,10 @@ st.markdown("""
         footer {visibility: hidden;}
         .stDeployButton {display: none;}
         
-        /* Eliminar padding adicional del body */
-        .stApp {
-            margin: 0;
-            padding: 0;
-            outline: none !important;
+        /* Eliminar cualquier borde global */
+        * {
             border: none !important;
+            outline: none !important;
         }
     </style>
 """, unsafe_allow_html=True)
