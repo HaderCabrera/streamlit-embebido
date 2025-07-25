@@ -13,6 +13,9 @@ st.set_page_config(
 # Estilos CSS para integración en iframe - SIN PADDING Y SIN BORDES
 st.markdown("""
     <style>
+        html, body {
+            border: 0 !important;
+        }
         /* Eliminar TODO el padding y margenes del contenedor principal */
         .block-container {
             padding: 0 !important;
