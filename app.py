@@ -10,39 +10,23 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
+# Estilos CSS para integración en iframe
 st.markdown("""
     <style>
-        /* ELIMINAR BORDE DE STREAMLIT CLOUD EMBED */
-        ._streamlitAppContainer_nim44_1._embed_nim44_18 {
-            border: 0 !important;
-            border-radius: 0 !important;
-            border-width: 0 !important;
-            padding-bottom: 0 !important;
-            overflow: hidden !important;
+        /* Ajustes responsive */
+        .stPlotlyChart, .stDataFrame {
+            width: 100% !important;
         }
-        
-        /* También puede venir con otros nombres de clase similares */
-        [class*="streamlitAppContainer"][class*="embed"] {
-            border: 0 !important;
-            border-radius: 0 !important;
-            border-width: 0 !important;
-            padding-bottom: 0 !important;
+        /* Colores adaptables */
+        @media (prefers-color-scheme: dark) {
+            .stApp {
+                background-color: #0E1117;
+                color: #FAFAFA;
+            }
         }
-        
-        /* Estilos adicionales para asegurar que no haya bordes */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            border: 0 !important;
-            outline: 0 !important;
-        }
-        
-        .stApp, .main, .block-container {
-            margin: 0 !important;
-            padding: 0 !important;
-            border: 0 !important;
-            outline: 0 !important;
-        }
+        /* Ocultar footer y menú de Streamlit */
+        footer {visibility: hidden;}
+        .stDeployButton {display: none;}
     </style>
 """, unsafe_allow_html=True)
 
