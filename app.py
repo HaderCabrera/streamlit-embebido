@@ -12,7 +12,24 @@ st.set_page_config(
 
 st.markdown("""
     <style>
-        /* ESTILOS PARA EMBED EN STREAMLIT CLOUD */
+        /* ELIMINAR BORDE DE STREAMLIT CLOUD EMBED */
+        ._streamlitAppContainer_nim44_1._embed_nim44_18 {
+            border: 0 !important;
+            border-radius: 0 !important;
+            border-width: 0 !important;
+            padding-bottom: 0 !important;
+            overflow: hidden !important;
+        }
+        
+        /* También puede venir con otros nombres de clase similares */
+        [class*="streamlitAppContainer"][class*="embed"] {
+            border: 0 !important;
+            border-radius: 0 !important;
+            border-width: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        /* Estilos adicionales para asegurar que no haya bordes */
         html, body {
             margin: 0 !important;
             padding: 0 !important;
@@ -25,26 +42,6 @@ st.markdown("""
             padding: 0 !important;
             border: 0 !important;
             outline: 0 !important;
-        }
-        
-        /* ESTO ES CLAVE PARA STREAMLIT CLOUD */
-        [data-testid="stAppViewContainer"] {
-            border: 0 !important;
-            outline: 0 !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        /* Eliminar cualquier sombra o borde del contenedor principal */
-        div[data-testid="stApp"] {
-            border: 0 !important;
-            outline: 0 !important;
-            box-shadow: none !important;
-        }
-        
-        /* Fondo transparente para embed */
-        .stApp {
-            background: transparent !important;
         }
     </style>
 """, unsafe_allow_html=True)
