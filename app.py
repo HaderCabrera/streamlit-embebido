@@ -10,63 +10,41 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Estilos CSS para integración en iframe - SIN PADDING Y SIN BORDES
 st.markdown("""
     <style>
+        /* ESTILOS PARA EMBED EN STREAMLIT CLOUD */
         html, body {
+            margin: 0 !important;
+            padding: 0 !important;
             border: 0 !important;
-        }
-        /* Eliminar TODO el padding y margenes del contenedor principal */
-        .block-container {
-            padding: 0 !important;
-            margin: 0 !important;
-            border: none !important;
-            outline: none !important;
+            outline: 0 !important;
         }
         
-        /* Eliminar bordes del contenedor de la app */
-        .stApp {
+        .stApp, .main, .block-container {
             margin: 0 !important;
             padding: 0 !important;
-            border: none !important;
-            outline: none !important;
+            border: 0 !important;
+            outline: 0 !important;
         }
         
-        /* Eliminar bordes de todo el documento */
-        body {
+        /* ESTO ES CLAVE PARA STREAMLIT CLOUD */
+        [data-testid="stAppViewContainer"] {
+            border: 0 !important;
+            outline: 0 !important;
             margin: 0 !important;
             padding: 0 !important;
-            border: none !important;
-            outline: none !important;
         }
         
-        /* Eliminar bordes del contenedor principal de Streamlit */
+        /* Eliminar cualquier sombra o borde del contenedor principal */
         div[data-testid="stApp"] {
-            border: none !important;
-            outline: none !important;
+            border: 0 !important;
+            outline: 0 !important;
+            box-shadow: none !important;
         }
         
-        /* Ajustes responsive para gráficos y tablas */
-        .stPlotlyChart, .stDataFrame {
-            width: 100% !important;
-        }
-        
-        /* Colores adaptables */
-        @media (prefers-color-scheme: dark) {
-            .stApp {
-                background-color: #000000;
-                color: #FAFAFA;
-            }
-        }
-        
-        /* Ocultar footer y menú de Streamlit */
-        footer {visibility: hidden;}
-        .stDeployButton {display: none;}
-        
-        /* Eliminar cualquier borde global */
-        * {
-            border: none !important;
-            outline: none !important;
+        /* Fondo transparente para embed */
+        .stApp {
+            background: transparent !important;
         }
     </style>
 """, unsafe_allow_html=True)
