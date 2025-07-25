@@ -40,6 +40,8 @@ st.markdown("""
         .stApp {
             margin: 0;
             padding: 0;
+            outline: none !important;
+            border: none !important;
         }
     </style>
 """, unsafe_allow_html=True)
